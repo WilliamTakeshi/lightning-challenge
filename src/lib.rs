@@ -5,6 +5,7 @@ use tokio::net::TcpListener;
 pub fn run(listener: TcpListener) -> Serve<Router, Router> {
     tracing_subscriber::fmt::init();
 
+    // sqlx::migrate!().run(<&your_pool OR &mut your_connection>).await?;
     let app = Router::new()
         .route("/health_check", get(health_check))
         .route("/load_nodes", get(load_nodes));
