@@ -9,5 +9,5 @@ pub fn run(listener: TcpListener) -> Serve<Router, Router> {
 }
 
 async fn health_check() -> impl IntoResponse {
-    StatusCode::OK
+    (StatusCode::OK, "OK")
 }
