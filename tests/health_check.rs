@@ -1,3 +1,6 @@
+use std::time::Duration;
+
+use sqlx::postgres::PgPoolOptions;
 use tokio::net::TcpListener;
 
 #[tokio::test]
@@ -23,7 +26,9 @@ async fn spawn_app() -> String {
 
     let port = listener.local_addr().unwrap().port();
 
-    tokio::spawn(async { lightning_challenge::run(listener).await });
+    let pool = lightning_challenge::setup_db().await;
+
+    tokio::spawn(async { lightning_challenge::run(listener, pool).await });
 
     format!("http://127.0.0.1:{}", port)
 }
