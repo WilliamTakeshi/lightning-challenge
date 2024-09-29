@@ -1,0 +1,38 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT public_key, alias, capacity, first_seen\n        FROM nodes\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "public_key",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 1,
+        "name": "alias",
+        "type_info": "Varchar"
+      },
+      {
+        "ordinal": 2,
+        "name": "capacity",
+        "type_info": "Int8"
+      },
+      {
+        "ordinal": 3,
+        "name": "first_seen",
+        "type_info": "Int8"
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "7e79d2d63d4b491f942fe2a7f11adc43e486e7cf4ef433533d9eb821b78a66ae"
+}
