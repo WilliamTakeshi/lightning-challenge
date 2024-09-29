@@ -1,6 +1,3 @@
-use std::time::Duration;
-
-use sqlx::postgres::PgPoolOptions;
 use tokio::net::TcpListener;
 
 #[tokio::test]
