@@ -10,6 +10,7 @@ async fn main() {
     let pool = lightning_challenge::setup_db().await;
     // TODO: Remove unwraps
     // Setup database
+    // QUESTION: Should be the database be loaded on the startup?
     load_nodes(&pool).await.unwrap();
 
     let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();

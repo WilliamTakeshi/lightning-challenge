@@ -41,3 +41,10 @@ Tests. All the tests are sharing the same database, so if a test modifies the DB
 ## Is there any other information you’d like us to know?
 
 If the docker doesn't work, check if you already have postgresql running (or something on the ports 5432)
+
+Also, there is lots of questions about the requirement that isn't in the challenge
+
+* Do you need the data be loaded on the startup? or should be a different endpoint
+* Is it safe to assume the data will be always there?
+* On conflict, should we just update the fields? or ignore it?
+* etc.
