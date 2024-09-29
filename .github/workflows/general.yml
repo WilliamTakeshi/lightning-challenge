@@ -13,7 +13,9 @@ env:
   CARGO_TERM_COLOR: always
   SQLX_VERSION: 0.8.0
   SQLX_FEATURES: "rustls,postgres"
-
+  APP_USER: app
+  APP_USER_PWD: password
+  APP_DB_NAME: lightning
 jobs:
   fmt:
     name: Rustfmt
@@ -50,9 +52,9 @@ jobs:
         # Docker Hub image
         image: postgres:15
         env:
-          POSTGRES_USER: app
+          POSTGRES_USER: postgres
           POSTGRES_PASSWORD: password
-          POSTGRES_DB: lightning
+          POSTGRES_DB: postgres
         ports:
           - 5432:5432
     steps:
